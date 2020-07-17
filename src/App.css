@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+  display: grid;
+  grid-template-areas: 'h h' 'n b''f f'  ;
+  grid-template-columns: 100px 2fr;
+  grid-template-rows: 4fr 700px 4fr;
+  grid-gap: 10px;
+}
+
+header{
+grid-area: h;
+  background-color: skyblue;
+}
+
+nav{
+  grid-area: n;
+  background-color: green;
+}
+span img{
+  width: 100%;
+}
+span{
+  grid-area: b;
+  background-color: greenyellow;
+}
+footer {
+  grid-area: f;
+  background-color: grey;
+}
+
+img{
+  width:50px
+}
