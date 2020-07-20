@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import './Herader.module.css';
 let Header=()=>{
     return(
             <header>

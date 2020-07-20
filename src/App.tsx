@@ -3,7 +3,6 @@ import './App.css';
 import Header from "./components/Herader";
 import Nav from "./components/Nav";
 import Profile from "./components/Profile";
-import Footer from "./components/Footer";
 
 function App() {
     return (
@@ -11,7 +10,7 @@ function App() {
             <Header/>
             <Nav/>
             <Profile/>
-            <Footer/>
+
         </div>
     );
 }
