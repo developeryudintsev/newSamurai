@@ -1,8 +1,8 @@
 .App {
-  text-align: center;
+
   display: grid;
-  grid-template-areas: 'h h' 'n b''f f'  ;
+  grid-template-areas: 'h h' 'n b' ;
   grid-template-columns: 100px 2fr;
-  grid-template-rows: 4fr 700px 4fr;
+  grid-template-rows: 60px 12fr ;
   grid-gap: 10px;
 }
