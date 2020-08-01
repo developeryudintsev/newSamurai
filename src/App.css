@@ -1,5 +1,4 @@
 .App {
-
   display: grid;
   grid-template-areas: 'h h' 'n b' ;
   grid-template-columns: 100px 2fr;
@@ -8,7 +7,7 @@
 }
 
 .App-wraper-content{
-
+background-color: skyblue;
 }
 
 
