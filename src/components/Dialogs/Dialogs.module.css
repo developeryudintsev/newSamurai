@@ -1,4 +1,17 @@
 .content{
+    display: grid;
+grid-template-columns: 1fr 11fr ;
+grid-template-areas:'c m' ;
+}
+.messages{
+    display: inline-block;
+}
+.contentitem{
     grid-area: c;
-background-color: skyblue;
+    color:white;
+}
+
+.messagesmessage{
+    grid-area: m;
+    color:gold;
 }
