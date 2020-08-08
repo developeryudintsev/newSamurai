@@ -1,10 +1,9 @@
 import React from 'react';
-import classes from './Nav.module.css';
-import {NavLink} from "react-router-dom";
+
 export let Body=()=>{
     return(
         <span><img
-            src={'https://www.updatetvandstereo.com/wp-content/uploads/2016/12/bora-bora-french-polynesia-sunset-ocean.jpg'}/>
+            src={'https://seafood.ocean.org/wp-content/uploads/2016/09/bora-bora-french-polynesia-sunset-ocean.jpg'}/>
 
 
     </span>

@@ -7,6 +7,8 @@ let Myposts = () => {
         <span className={classes.span}>
           <div>
 <textarea></textarea>
+              <button>Add</button>
+              <p></p>
               <Post message={'Hi,how are you'}/>
               <Post message={"It's my first post"}/>
            </div>

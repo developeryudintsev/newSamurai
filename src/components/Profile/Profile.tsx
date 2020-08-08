@@ -1,12 +1,14 @@
 import React from 'react';
 import classes from './Profile.module.css';
 import Myposts from "./MyPosts/Myposts";
+import ProfileInfo from "./MyPosts/ProfileInfo/ProfileInfo";
 
 let Profile = () => {
     return (
-        <span className={classes.span}>
+        <span >
 
-       <div className={'item'}>ava+description</div>
+            <ProfileInfo/>
+
                 <Myposts/>
             </span>
     )
