@@ -1,8 +1,9 @@
 import React from "react";
 import d from './Dialogs.module.css';
 import {NavLink} from "react-router-dom";
+import Post from "../Profile/MyPosts/Post/Post";
 type PropsType={
-    id:string,
+    id:number,
     classname:string
 }
 let DialogItem=(props:PropsType)=>{
@@ -17,25 +18,42 @@ let DialogItem=(props:PropsType)=>{
 type MessageType={
     Message:string
 }
-
 let Message=(props:MessageType)=>{
     return(
         <div className={d.contentitem}>{props.Message}</div>
     )
 }
-
 function Dialogs() {
+    let dailogsData=[
+        {id:1,name:'Dima'},
+        {id:2,name:'Sasha'},
+        {id:3,name:'Igor'}
+        ]
+    let messageData=[
+        {id:1,name:'hi'},
+        {id:2,name:'hihihihihihihihihihihihihihihihi!!!!!!!!!!!!!'},
+        {id:3,name:'hi'}
+    ]
     return (
         <div className={d.content}>
             <div className={''}>
-                <div className={d.contentitem}><Message Message={'Hi'}/></div>
-                <div className={d.contentitem}><Message Message={'Hi'}/></div>
-                <div className={d.contentitem}><Message Message={'Hi'}/></div>
+                {
+                    dailogsData.map(m=>
+                        <div>
+                            <DialogItem id={m.id} classname={m.name}/>
+                        </div>
+                        )
+                }
+
             </div>
             <div className={d.messages}>
-                <div className={d.messagesmessage}>Hi</div>
-                <div className={d.messagesmessage}>Hi</div>
-                <div className={d.messagesmessage} >Hi</div>
+                {
+                    messageData.map(m=>
+                    <div>
+                        <Message Message={m.name}/>
+                    </div>
+                    )
+                }
             </div>
         </div>
     );

@@ -1,4 +1,5 @@
 .span{
     grid-area: b;
-    background-color: greenyellow;
+    color: white;
+    bottom: 100px;
 }
