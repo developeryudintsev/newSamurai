@@ -1,0 +1,9 @@
+.contentitem{
+    top: 10px;
+    grid-area: c;
+    color:white;
+}
+.active{
+    color: white;
+    text-decoration: none;
+}

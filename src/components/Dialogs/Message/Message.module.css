@@ -1,0 +1,9 @@
+.messages{
+    display: inline-block;
+}
+.contentitem{
+    top: 10px;
+    grid-area: c;
+    color:white;
+}
+
