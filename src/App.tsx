@@ -7,7 +7,27 @@ import Dialogs from "./components/Dialogs/Dialogs";
 import {Route,BrowserRouter} from 'react-router-dom'
 import {Body} from "./components/Body/Body";
 
-function App() {
+type PropsType={
+    messageData:Array<messageDataPost>
+    messagesData:Array<dialogItemprops>
+    dailogsData:Array<dailogsDataprops>
+
+}
+type dailogsDataprops={
+    id:number,
+    name:string
+}
+type dialogItemprops={
+    id:number,
+    name:string
+}
+type messageDataPost={
+    id:number,
+    messages:string,
+    lickeCount:number
+}
+function App(props:PropsType) {
+
     return (
         <BrowserRouter>
         <div className="App">
@@ -17,8 +37,8 @@ function App() {
 
             <div className={'App-wraper-content'}>
                 <Route exact path={'/'} component={Body}/>
-                <Route  path={'/profile'} render={()=><Profile/>}/>
-                <Route path={'/dialogs'} render={()=><Dialogs/>}/>
+                <Route  path={'/profile'} render={()=><Profile messageData={props.messageData}/>}/>
+                <Route path={'/dialogs'} render={()=><Dialogs messagesData={props.messagesData} dailogsData={props.dailogsData}/>}/>
 
             </div>
         </div>

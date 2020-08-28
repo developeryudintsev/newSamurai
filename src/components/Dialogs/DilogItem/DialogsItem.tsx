@@ -14,18 +14,20 @@ let DialogsItems=(props:PropsType)=>{
     )
 }
 
+type PropsTypeD={
+    dailogsData:Array<dailogsDataprops>
+}
+type dailogsDataprops={
+    id:number,
+    name:string
+}
+function DialogsItemsdo(props:PropsTypeD) {
 
-function DialogsItemsdo() {
-    let dailogsData=[
-        {id:1,name:'Dima'},
-        {id:2,name:'Sasha'},
-        {id:3,name:'Igor'}
-        ]
 
     return (
             <div className={''}>
                 {
-                    dailogsData.map(m=>
+                    props.dailogsData.map(m=>
                         <div>
                             <DialogsItems id={m.id} classname={m.name}/>
                         </div>

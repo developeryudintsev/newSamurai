@@ -12,21 +12,29 @@ let Message=(props:MessageType)=>{
         <div className={d.contentitem}>{props.Message}</div>
     )
 }
-function Dialogs() {
-    let messageData=[
-        {id:1,name:'hi'},
-        {id:2,name:'hihihihihihihihihihihihihihihihi!!!!!!!!!!!!!'},
-        {id:3,name:'hi'}
-    ]
+type PropsType={
+    messagesData:Array<dialogItemprops>
+    dailogsData:Array<dailogsDataprops>
+}
+type dailogsDataprops={
+    id:number,
+    name:string
+}
+type dialogItemprops={
+    id:number,
+    name:string
+}
+function Dialogs(props:PropsType) {
+
     return (
         <div className={d.content}>
             <div className={''}>
-               <DialogsItemsdo/>
+               <DialogsItemsdo dailogsData={props.dailogsData}/>
 
             </div>
             <div className={d.messages}>
                 {
-                    messageData.map(m=>
+                    props.messagesData.map(m=>
                     <div>
                         <Message Message={m.name}/>
                     </div>
