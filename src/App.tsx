@@ -6,26 +6,12 @@ import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
 import {Route,BrowserRouter} from 'react-router-dom'
 import {Body} from "./components/Body/Body";
+import {stateType} from "./Redux/state";
 
 type PropsType={
-    messageData:Array<messageDataPost>
-    messagesData:Array<dialogItemprops>
-    dailogsData:Array<dailogsDataprops>
+state:stateType
+}
 
-}
-type dailogsDataprops={
-    id:number,
-    name:string
-}
-type dialogItemprops={
-    id:number,
-    name:string
-}
-type messageDataPost={
-    id:number,
-    messages:string,
-    lickeCount:number
-}
 function App(props:PropsType) {
 
     return (
@@ -37,8 +23,8 @@ function App(props:PropsType) {
 
             <div className={'App-wraper-content'}>
                 <Route exact path={'/'} component={Body}/>
-                <Route  path={'/profile'} render={()=><Profile messageData={props.messageData}/>}/>
-                <Route path={'/dialogs'} render={()=><Dialogs messagesData={props.messagesData} dailogsData={props.dailogsData}/>}/>
+                <Route  path={'/profile'} render={()=><Profile state={props.state.profilePage}/>}/>
+                <Route path={'/dialogs'} render={()=><Dialogs messagesData={props.state.dialogsPage.messages} dailogsData={props.state.dialogsPage.dialogs}/>}/>
 
             </div>
         </div>

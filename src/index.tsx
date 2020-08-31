@@ -3,24 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import state from "./Redux/state";
 
-let messageData=[
-    {id:1,messages:'Hi,how are you',lickeCount:10000000000000000},
-    {id:2,messages:"It's my first post",lickeCount: 99999999},
-]
-let messagesData=[
-    {id:1,name:'hi'},
-    {id:2,name:'hihihihihihihihihihihihihihihihi!!!!!!!!!!!!!'},
-    {id:3,name:'hi'}
-]
-let dailogsData=[
-    {id:1,name:'Dima'},
-    {id:2,name:'Sasha'},
-    {id:3,name:'Igor'}
-]
+
 ReactDOM.render(
   <React.StrictMode>
-    <App messageData={messageData} messagesData={messagesData} dailogsData={dailogsData}/>
+    <App state={state}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,22 +1,19 @@
 import React from 'react';
 import Myposts from "./MyPosts/Myposts";
 import ProfileInfo from "./MyPosts/ProfileInfo/ProfileInfo";
+import {profilePageType} from "../../Redux/state";
 
 type propsType={
-    messageData:Array<messageDataPost>
+    state:profilePageType
 }
-type messageDataPost={
-    id:number,
-    messages:string,
-    lickeCount:number
-}
+
 let Profile = (props:propsType) => {
 
     return (
         <span >
 
             <ProfileInfo/>
-                <Myposts messageDataPosts={props.messageData}/>
+                <Myposts messageDataPosts={props.state.posts}/>
             </span>
     )
 }
