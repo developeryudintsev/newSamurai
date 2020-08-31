@@ -15,7 +15,6 @@ state:stateType
 function App(props:PropsType) {
 
     return (
-        <BrowserRouter>
         <div className="App">
             <Header/>
             <Nav/>
@@ -28,7 +27,6 @@ function App(props:PropsType) {
 
             </div>
         </div>
-        </BrowserRouter>
     );
 }
 export default App;
