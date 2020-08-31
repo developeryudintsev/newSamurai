@@ -49,4 +49,15 @@ export let state:stateType= {
     },
     sidebar: {}
 }
+export let addPost=(postMessage:string)=>{
+    console.log(postMessage)
+    let newPost:postType={
+        id:5,
+        messages:postMessage,
+        lickeCount:99999999999999999999999999999999999999999999999999999
+    }
+    state.profilePage.posts.push(newPost)
+    console.log(state.profilePage.posts)
+}
+
 export default state
