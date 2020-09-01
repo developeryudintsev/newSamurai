@@ -15,10 +15,11 @@ type profileType={
 
 let Myposts = (props:propsType) => {
     let newPostText=React.createRef<HTMLTextAreaElement>();
-let addPostNow=()=>{
-    if (newPostText.current?.value){
-    props.addPost(newPostText.current?.value)
-}
+let addPostNow=()=> {
+    if (newPostText.current?.value) {
+        props.addPost(newPostText.current?.value);
+        newPostText.current.value=''
+    }
 }
     return (
         <span className={classes.span}>
