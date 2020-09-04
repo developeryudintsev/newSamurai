@@ -6,7 +6,7 @@ import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
 import {Route,BrowserRouter} from 'react-router-dom'
 import {Body} from "./components/Body/Body";
-import {addPost, stateType} from "./Redux/state";
+import {addPost, stateType, updateNewtext} from "./Redux/state";
 
 type PropsType={
 state:stateType
@@ -23,7 +23,7 @@ function App(props:PropsType) {
 
             <div className={'App-wraper-content'}>
                 <Route exact path={'/'} component={Body}/>
-                <Route  path={'/profile'} render={()=><Profile  addPost={props.addPost} state={props.state.profilePage}/>}/>
+                <Route  path={'/profile'} render={()=><Profile updateNewtext={updateNewtext} addPost={props.addPost} state={props.state.profilePage}/>}/>
                 <Route path={'/dialogs'} render={()=><Dialogs messagesData={props.state.dialogsPage.messages} dailogsData={props.state.dialogsPage.dialogs}/>}/>
 
             </div>
