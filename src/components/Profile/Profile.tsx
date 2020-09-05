@@ -1,10 +1,10 @@
 import React from 'react';
 import Myposts from "./MyPosts/Myposts";
 import ProfileInfo from "./MyPosts/ProfileInfo/ProfileInfo";
-import {profilePageType, updateNewtext} from "../../Redux/state";
+// import {profilePageType} from "../../Redux/state";
 
 type propsType={
-    state:profilePageType,
+    state:any,
     addPost:(newPost:string)=>void
     updateNewtext:(newText:string)=>void;
 }
@@ -15,7 +15,7 @@ let Profile = (props:propsType) => {
         <span >
 
             <ProfileInfo/>
-                <Myposts updateNewtext={updateNewtext} addPost={props.addPost} messageDataPosts={props.state.posts} messageDataPostsText={props.state.newPostText}/>
+                <Myposts updateNewtext={props.updateNewtext} addPost={props.addPost} messageDataPosts={props.state.posts} messageDataPostsText={props.state.newPostText}/>
             </span>
     )
 }
