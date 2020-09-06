@@ -1,11 +1,12 @@
 import React from 'react';
 import Myposts from "./MyPosts/Myposts";
 import ProfileInfo from "./MyPosts/ProfileInfo/ProfileInfo";
+import {ActionsType} from "../../Redux/state";
 // import {profilePageType} from "../../Redux/state";
 
 type propsType={
     state:any,
-    dispatch:(action:{type:string,newText:string})=>void
+    dispatch:(action:ActionsType)=>void
 
 }
 

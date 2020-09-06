@@ -1,11 +1,12 @@
 import React from 'react';
 import classes from './Myposts.module.css';
 import Post from "./Post/Post";
+import {ActionsType, addPostActionCreator, updateNewPostActionCreator} from "../../../Redux/state";
 
 type propsType={
     messageDataPosts:Array<profileType>
     messageDataPostsText:string
-    dispatch:(action:{type:string,newText:string})=>void
+    dispatch:(action:ActionsType)=>void
 }
 type profileType={
     id:number,
@@ -17,14 +18,16 @@ let Myposts = (props:propsType) => {
     let newPostText=React.createRef<HTMLTextAreaElement>();
 let addPostNow=()=> {
     if (newPostText.current?.value) {
-        props.dispatch({type:'ADD_POST',newText:'s'});
+        props.dispatch(addPostActionCreator());
         newPostText.current.value=''
     }
 }
 let onChange=()=>{
     if (newPostText.current?.value) {
         let text = newPostText.current.value;
-        props.dispatch({type:'UPDATE_NEW_POST_TEXT',newText:text});
+        // let updateNewPostActionCreator={ type: 'UPDATE_NEW_POST_TEXT', newText: text };
+        let action=updateNewPostActionCreator(text)
+        props.dispatch(action);
     }
 }
     return (

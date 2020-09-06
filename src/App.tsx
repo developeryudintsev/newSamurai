@@ -6,11 +6,11 @@ import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
 import {Route,BrowserRouter} from 'react-router-dom'
 import {Body} from "./components/Body/Body";
-import store, { stateType, } from "./Redux/state";
+import store, {ActionsType, stateType,} from "./Redux/state";
 
 type PropsType={
 state:stateType
-    dispatch:(action:{type:string,newText:string})=>void
+    dispatch:(action:ActionsType)=>void
 }
 
 function App(props:PropsType) {
