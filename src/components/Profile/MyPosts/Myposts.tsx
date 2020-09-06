@@ -3,10 +3,9 @@ import classes from './Myposts.module.css';
 import Post from "./Post/Post";
 
 type propsType={
-    addPost:(newPost:string)=>void
     messageDataPosts:Array<profileType>
     messageDataPostsText:string
-    updateNewtext:(newText:string)=>void;
+    dispatch:(action:{type:string,newText:string})=>void
 }
 type profileType={
     id:number,
@@ -18,14 +17,14 @@ let Myposts = (props:propsType) => {
     let newPostText=React.createRef<HTMLTextAreaElement>();
 let addPostNow=()=> {
     if (newPostText.current?.value) {
-        props.addPost(newPostText.current?.value);
+        props.dispatch({type:'ADD_POST',newText:'s'});
         newPostText.current.value=''
     }
 }
 let onChange=()=>{
     if (newPostText.current?.value) {
         let text = newPostText.current.value;
-        props.updateNewtext(text)
+        props.dispatch({type:'UPDATE_NEW_POST_TEXT',newText:text});
     }
 }
     return (

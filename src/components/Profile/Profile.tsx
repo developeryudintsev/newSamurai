@@ -5,8 +5,8 @@ import ProfileInfo from "./MyPosts/ProfileInfo/ProfileInfo";
 
 type propsType={
     state:any,
-    addPost:(newPost:string)=>void
-    updateNewtext:(newText:string)=>void;
+    dispatch:(action:{type:string,newText:string})=>void
+
 }
 
 let Profile = (props:propsType) => {
@@ -15,7 +15,9 @@ let Profile = (props:propsType) => {
         <span >
 
             <ProfileInfo/>
-                <Myposts updateNewtext={props.updateNewtext} addPost={props.addPost} messageDataPosts={props.state.posts} messageDataPostsText={props.state.newPostText}/>
+                <Myposts
+                    dispatch={props.dispatch}
+                    messageDataPosts={props.state.posts} messageDataPostsText={props.state.newPostText}/>
             </span>
     )
 }

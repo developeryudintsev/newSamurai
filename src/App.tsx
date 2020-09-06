@@ -10,8 +10,7 @@ import store, { stateType, } from "./Redux/state";
 
 type PropsType={
 state:stateType
-    addPost:(newPost:string)=>void
-    updateNewtext:(newText:string)=>void
+    dispatch:(action:{type:string,newText:string})=>void
 }
 
 function App(props:PropsType) {
@@ -24,7 +23,10 @@ function App(props:PropsType) {
 
             <div className={'App-wraper-content'}>
                 <Route exact path={'/'} component={Body}/>
-                <Route  path={'/profile'} render={()=><Profile updateNewtext={props.updateNewtext} addPost={props.addPost} state={props.state.profilePage}/>}/>
+                <Route  path={'/profile'} render={()=>
+                    <Profile
+                        dispatch={props.dispatch}
+                        state={props.state.profilePage}/>}/>
                 <Route path={'/dialogs'} render={()=><Dialogs messagesData={props.state.dialogsPage.messages} dailogsData={props.state.dialogsPage.dialogs}/>}/>
 
             </div>

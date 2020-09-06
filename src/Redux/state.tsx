@@ -34,9 +34,10 @@ export type storeType={
     _state:stateType;
     getState:()=>void
     _callSubsriber:(state:stateType)=>void
-    addPost:(postMessage:string)=>void
-    updateNewtext:(newText:string)=>void
+    // addPost:(postMessage:string)=>void
+    // updateNewtext:(newText:string)=>void
     subscribe:(observer:any)=>void
+    dispatch:(action:{type:string,newText:string})=>void
 }
 
 let store:storeType={
@@ -68,21 +69,36 @@ let store:storeType={
     },
     _callSubsriber(state:stateType){
     },
-    addPost(postMessage:string){
-        let newPost:postType={
-            id:5,
-            messages:postMessage,
-            lickeCount:99999999999999999999999999999999999999999999999999999
-        }
-        this._state.profilePage.posts.push(newPost)
-        this._callSubsriber(this._state)
-    },
-     updateNewtext(newText:string){
-        this._state.profilePage.newPostText=newText
-        rerenderEntireTree(this._state)
-    },
     subscribe(observer:any){
         this._callSubsriber=observer;
+    },
+    // addPost(postMessage:string){
+    //     let newPost:postType={
+    //         id:5,
+    //         messages:postMessage,
+    //         lickeCount:99999999999999999999999999999999999999999999999999999
+    //     }
+    //     this._state.profilePage.posts.push(newPost)
+    //     this._callSubsriber(this._state)
+    // },
+    //  updateNewtext(newText:string){
+    //     this._state.profilePage.newPostText=newText
+    //     rerenderEntireTree(this._state)
+    // },
+    dispatch(action:{type:string,newText:string}){
+        if(action.type==='ADD_POST'){
+            let newPost:any={
+                id:5,
+                messages:this._state.profilePage.newPostText,
+                lickeCount:99999999999999999999999999999999999999999999999999999
+            }
+            this._state.profilePage.posts.push(newPost)
+            this._callSubsriber(this._state)
+        }
+        else if(action.type==='UPDATE_NEW_POST_TEXT'){
+            this._state.profilePage.newPostText=action.newText
+            rerenderEntireTree(this._state)
+        }
     }
 }
 
